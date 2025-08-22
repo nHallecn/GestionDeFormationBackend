@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: gestiondeformationbackend # Choose a unique name for your service
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: API_BASE_URL
+        sync: false # This will be set on Render dashboard after deployment
+      - key: PORT
+        value: 10000 # Render automatically sets the PORT environment variable, but you can specify a default if needed.
